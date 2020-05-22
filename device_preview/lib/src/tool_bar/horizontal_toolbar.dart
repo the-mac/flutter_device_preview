@@ -37,6 +37,7 @@ class _DevicePreviewToolBarState extends State<DevicePreviewHorizontalToolBar> {
       builder: (context, _) => DevicesPopOver(),
       child: Builder(
         builder: (context) => ToolBarButton(
+          key: Key('HorizontalToolbarDevicesButton'),
           isRoundedLeft: true,
           title: preview.device?.name,
           icon: Icons.phone_android,
@@ -55,6 +56,7 @@ class _DevicePreviewToolBarState extends State<DevicePreviewHorizontalToolBar> {
       ),
       child: Builder(
         builder: (context) => ToolBarButton(
+          key: Key('HorizontalToolbarWidthButton'),
           title: showTitles
               ? (preview.device?.portrait?.size?.width ??
                       preview.freeformSize.width)
@@ -81,6 +83,7 @@ class _DevicePreviewToolBarState extends State<DevicePreviewHorizontalToolBar> {
       ),
       child: Builder(
         builder: (context) => ToolBarButton(
+          key: Key('HorizontalToolbarHeightButton'),
           isRoundedRight: true,
           title: showTitles
               ? (preview.device?.portrait?.size?.height ??
@@ -134,6 +137,7 @@ class _DevicePreviewToolBarState extends State<DevicePreviewHorizontalToolBar> {
               ],
             ),
             Popover(
+              key: Key('HorizontalToolbarLocalesButton'),
               title: 'Locales',
               icon: Icons.language,
               builder: (context, _) => LocalesPopOver(),
@@ -147,6 +151,7 @@ class _DevicePreviewToolBarState extends State<DevicePreviewHorizontalToolBar> {
               ),
             ),
             ToolBarButton(
+              key: Key('HorizontalToolbarRotateButton'),
               title: 'Rotate',
               icon: Icons.screen_rotation,
               onTap: preview.device.type == DeviceType.freeform
@@ -154,16 +159,19 @@ class _DevicePreviewToolBarState extends State<DevicePreviewHorizontalToolBar> {
                   : () => preview.rotate(),
             ),
             ToolBarButton(
+              key: Key('HorizontalToolbarRestartButton'),
               title: showTitles ? 'Restart' : null,
               icon: Icons.refresh,
               onTap: () => preview.restart(),
             ),
             ToolBarButton(
+              key: Key('HorizontalToolbarFrameButton'),
               title: !preview.isFrameVisible ? 'Display frame' : 'Hide frame',
               icon: Icons.border_outer,
               onTap: () => preview.toggleFrame(),
             ),
             ToolBarButton(
+              key: Key('HorizontalToolbarKeyboardButton'),
               title: preview.isVirtualKeyboardVisible
                   ? 'Hide keyboard'
                   : 'Show keyboard',
@@ -174,6 +182,7 @@ class _DevicePreviewToolBarState extends State<DevicePreviewHorizontalToolBar> {
                   !preview.isVirtualKeyboardVisible,
             ),
             ToolBarButton(
+              key: Key('HorizontalToolbarDarkmodeButton'),
               title:
                   showTitles ? (preview.isDarkMode ? 'Light' : 'Dark') : null,
               icon: preview.isDarkMode
@@ -189,6 +198,7 @@ class _DevicePreviewToolBarState extends State<DevicePreviewHorizontalToolBar> {
                   ScreenshotPopOver(screenShotmessage ?? ''),
               child: Builder(
                 builder: (context) => ToolBarButton(
+                  key: Key('HorizontalToolbarScreenshotButton'),
                   title: showTitles ? 'Take screenshot' : null,
                   icon: Icons.photo_camera,
                   onTap: () async {
@@ -214,6 +224,7 @@ class _DevicePreviewToolBarState extends State<DevicePreviewHorizontalToolBar> {
               builder: (context, _) => AccessibilityPopOver(),
               child: Builder(
                 builder: (context) => ToolBarButton(
+                  key: Key('HorizontalToolbarAccessibilityButton'),
                   title: showTitles ? 'Accessibility' : null,
                   icon: Icons.accessibility_new,
                   onTap: () => Popover.open(context),
@@ -227,6 +238,7 @@ class _DevicePreviewToolBarState extends State<DevicePreviewHorizontalToolBar> {
               builder: (context, close) => StylePopOver(close),
               child: Builder(
                 builder: (context) => ToolBarButton(
+                  key: Key('HorizontalToolbarSettingsButton'),
                   icon: Icons.tune,
                   onTap: () => Popover.open(context),
                 ),

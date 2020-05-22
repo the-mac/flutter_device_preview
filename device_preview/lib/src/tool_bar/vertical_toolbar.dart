@@ -37,6 +37,7 @@ class _DevicePreviewToolBarState extends State<DevicePreviewVerticalToolBar> {
       builder: (context, _) => DevicesPopOver(),
       child: Builder(
         builder: (context) => ToolBarButton(
+          key: Key('VerticalToolbarDevicesButton'),
           isRoundedTop: true,
           title: preview.device?.name,
           icon: Icons.phone_android,
@@ -55,6 +56,7 @@ class _DevicePreviewToolBarState extends State<DevicePreviewVerticalToolBar> {
       ),
       child: Builder(
         builder: (context) => ToolBarButton(
+          key: Key('VerticalToolbarWidthButton'),
           isRoundedBottomLeft: true,
           title: showTitles
               ? (preview.device?.portrait?.size?.width ??
@@ -82,6 +84,7 @@ class _DevicePreviewToolBarState extends State<DevicePreviewVerticalToolBar> {
       ),
       child: Builder(
         builder: (context) => ToolBarButton(
+          key: Key('VerticalToolbarHeightButton'),
           isRoundedBottomRight: true,
           title: showTitles
               ? (preview.device?.portrait?.size?.height ??
@@ -144,6 +147,7 @@ class _DevicePreviewToolBarState extends State<DevicePreviewVerticalToolBar> {
               builder: (context, _) => LocalesPopOver(),
               child: Builder(
                 builder: (context) => ToolBarButton(
+                  key: Key('VerticalToolbarLocalesButton'),
                   isRounded: true,
                   title: showTitles ? preview.locale?.toString() : null,
                   icon: Icons.language,
@@ -159,16 +163,19 @@ class _DevicePreviewToolBarState extends State<DevicePreviewVerticalToolBar> {
                   : () => preview.rotate(),
             ),
             ToolBarButton(
+              key: Key('VerticalToolbarRestartButton'),
               title: showTitles ? 'Restart' : null,
               icon: Icons.refresh,
               onTap: () => preview.restart(),
             ),
             ToolBarButton(
+              key: Key('VerticalToolbarFrameButton'),
               title: !preview.isFrameVisible ? 'Display frame' : 'Hide frame',
               icon: Icons.border_outer,
               onTap: () => preview.toggleFrame(),
             ),
             ToolBarButton(
+              key: Key('VerticalToolbarKeyboardButton'),
               title: preview.isVirtualKeyboardVisible
                   ? 'Hide keyboard'
                   : 'Show keyboard',
@@ -179,6 +186,7 @@ class _DevicePreviewToolBarState extends State<DevicePreviewVerticalToolBar> {
                   !preview.isVirtualKeyboardVisible,
             ),
             ToolBarButton(
+              key: Key('VerticalToolbarDarkmodeButton'),
               title:
                   showTitles ? (preview.isDarkMode ? 'Light' : 'Dark') : null,
               icon: preview.isDarkMode
@@ -194,6 +202,7 @@ class _DevicePreviewToolBarState extends State<DevicePreviewVerticalToolBar> {
                   ScreenshotPopOver(screenShotmessage ?? ''),
               child: Builder(
                 builder: (context) => ToolBarButton(
+                  key: Key('VerticalToolbarScreenshotButton'),
                   title: showTitles ? 'Take screenshot' : null,
                   icon: Icons.photo_camera,
                   onTap: () async {
@@ -219,6 +228,7 @@ class _DevicePreviewToolBarState extends State<DevicePreviewVerticalToolBar> {
               builder: (context, _) => AccessibilityPopOver(),
               child: Builder(
                 builder: (context) => ToolBarButton(
+                  key: Key('VerticalToolbarAccesibilityButton'),
                   title: showTitles ? 'Accesibility' : null,
                   icon: Icons.accessibility_new,
                   onTap: () => Popover.open(context),
@@ -232,6 +242,7 @@ class _DevicePreviewToolBarState extends State<DevicePreviewVerticalToolBar> {
               builder: (context, close) => StylePopOver(close),
               child: Builder(
                 builder: (context) => ToolBarButton(
+                  key: Key('VerticalToolbarSettingsButton'),
                   title: showTitles ? 'Settings' : null,
                   icon: Icons.tune,
                   onTap: () => Popover.open(context),
