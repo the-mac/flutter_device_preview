@@ -59,6 +59,7 @@ class _DevicesPopOverState extends State<DevicesPopOver> {
           ),
           Expanded(
             child: ListView(
+              key: Key('DevicesListView'),
               padding: EdgeInsets.all(10.0),
               children: preview.availableDevices
                   .where((x) =>
