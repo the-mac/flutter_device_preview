@@ -332,7 +332,7 @@ class _PopOverHeader extends StatelessWidget {
             ]
           ),
           SizedBox(
-              width: 115,
+              width: 145,
           ),
           PopoverCloseButton(
             onTap,
