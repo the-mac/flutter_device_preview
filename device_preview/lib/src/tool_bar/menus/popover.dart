@@ -287,6 +287,7 @@ class _PopOverHeader extends StatelessWidget {
   });
 
   static void close(BuildContext context) {
+    print('Called $this.close()');
     final state = context.findAncestorStateOfType<_PopoverState>();
     state.close();
   }
@@ -325,6 +326,7 @@ class _PopOverHeader extends StatelessWidget {
               FlatButton(
                 key: Key('PopOverHeaderCloseButton'),
                 padding: EdgeInsets.all(0.0),
+                clipBehavior: Clip.hardEdge,
                 child: Icon(
                   Icons.close,
                   size: 12.0,
