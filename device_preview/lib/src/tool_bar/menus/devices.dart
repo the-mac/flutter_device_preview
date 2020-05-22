@@ -120,7 +120,9 @@ class PlatformSelector extends StatelessWidget {
         children: all
             .map<Widget>((x) {
               final isSelected = selected.contains(x);
+              final identifier = normalize(x.toString());
               return ToolBarButton(
+                key: Key('PlatformSelector${identifier}Button'),
                 backgroundColor: isSelected ? theme.accentColor : null,
                 foregroundColor:
                     isSelected ? theme.accentTextTheme.button.color : null,
@@ -135,6 +137,12 @@ class PlatformSelector extends StatelessWidget {
       ),
     );
   }
+
+  String normalize(String string) {
+    var parts = string.split('.');
+    return parts[1][0].toUpperCase() + parts[1].substring(1);
+  }
+
 }
 
 class DeviceTile extends StatelessWidget {
@@ -262,6 +270,7 @@ class DeviceSearchField extends StatelessWidget {
           height: 48,
           padding: const EdgeInsets.fromLTRB(10, 4, 10, 10),
           child: TextField(
+            key: Key('DeviceSearchField'),
             style: TextStyle(color: toolBarStyle.foregroundColor, fontSize: 12),
             controller: searchTEC,
             decoration: InputDecoration(
