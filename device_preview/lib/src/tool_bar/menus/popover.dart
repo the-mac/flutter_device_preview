@@ -333,7 +333,7 @@ class _PopOverHeader extends StatelessWidget {
             ]
           ),
           Row(
-            crossAxisAlignment: CrossAxisAlignment.end,
+            mainAxisAlignment: MainAxisAlignment.end,
             children: <Widget>[
               PopoverCloseButton(
                 onTap,
