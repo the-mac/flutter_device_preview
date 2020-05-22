@@ -325,6 +325,7 @@ class _PopOverHeader extends StatelessWidget {
               IconButton(
                 key: Key('PopOverHeaderCloseButton'),
                 iconSize: 12.0,
+                padding: EdgeInsets.all(0.0),
                 icon: Icon(
                   Icons.close,
                   color: toolBarStyle.foregroundColor,
