@@ -287,7 +287,7 @@ class _PopOverHeader extends StatelessWidget {
   });
 
   static void close(BuildContext context) {
-    print('Called $this.close()');
+    print('Called _PopOverHeader.close()');
     final state = context.findAncestorStateOfType<_PopoverState>();
     state.close();
   }
