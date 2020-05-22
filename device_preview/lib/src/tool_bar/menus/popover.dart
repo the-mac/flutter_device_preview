@@ -310,10 +310,10 @@ class _PopOverHeader extends StatelessWidget {
         ),
       ),
       padding: EdgeInsets.all(10.0),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.end,
+      child: Stack(
+        fit: StackFit.expand,
         children: <Widget>[
-          Row(// child: 
+            Row(// child: 
             children: <Widget>[
               Icon(
                 icon,
@@ -331,18 +331,53 @@ class _PopOverHeader extends StatelessWidget {
               )
             ]
           ),
-          SizedBox(
-              width: 145,
-          ),
-          PopoverCloseButton(
-            onTap,
-            size: 20.0,
-            key: Key('PopoverHeaderCloseButton'),
-            semanticLabel: 'PopoverCloseButton',
-            color: toolBarStyle.foregroundColor
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: <Widget>[
+              PopoverCloseButton(
+                onTap,
+                size: 20.0,
+                key: Key('PopoverHeaderCloseButton'),
+                semanticLabel: 'PopoverCloseButton',
+                color: toolBarStyle.foregroundColor
+              )
+            ]
           )
-        ]
-      )
+        ],
+      ),
+      // child: Row(
+      //   crossAxisAlignment: CrossAxisAlignment.end,
+      //   children: <Widget>[
+      //     Row(// child: 
+      //       children: <Widget>[
+      //         Icon(
+      //           icon,
+      //           size: 12.0,
+      //           color: toolBarStyle.foregroundColor,
+      //         ),
+      //         SizedBox(
+      //           width: 6.0,
+      //         ),
+      //         Text(
+      //           title,
+      //           style: TextStyle(
+      //             color: toolBarStyle.foregroundColor,
+      //           ),
+      //         )
+      //       ]
+      //     ),
+      //     SizedBox(
+      //         width: 175,
+      //     ),
+      //     PopoverCloseButton(
+      //       onTap,
+      //       size: 20.0,
+      //       key: Key('PopoverHeaderCloseButton'),
+      //       semanticLabel: 'PopoverCloseButton',
+      //       color: toolBarStyle.foregroundColor
+      //     )
+      //   ]
+      // )
     );
   }
 }
