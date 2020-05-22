@@ -311,7 +311,8 @@ class _PopOverHeader extends StatelessWidget {
       ),
       padding: EdgeInsets.all(10.0),
       child: Stack(
-        fit: StackFit.expand,
+        fit: StackFit.loose,
+        alignment: Alignment.topCenter,
         children: <Widget>[
             Row(// child: 
             children: <Widget>[
