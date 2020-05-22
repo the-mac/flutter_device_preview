@@ -332,7 +332,7 @@ class _PopOverHeader extends StatelessWidget {
             ]
           ),
           SizedBox(
-              width: 95,
+              width: 115,
           ),
           PopoverCloseButton(
             onTap,
@@ -353,7 +353,7 @@ class PopoverCloseButton extends Icon {
     color,
     size,
     semanticLabel,
-    textDirection = TextDirection.rtl,
+    textDirection,
   }) : super(
     Icons.close,
     key: key,
@@ -367,7 +367,7 @@ class PopoverCloseButton extends Icon {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
-      child: this
+      child: super
     );
   }
 }
