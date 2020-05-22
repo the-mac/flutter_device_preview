@@ -335,14 +335,13 @@ class _PopOverHeader extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: <Widget>[
-              FlatButton.icon(
+              FlatButton(
                 key: Key('PopoverHeader${title}CloseButton'),
-                icon: Icon(
+                child: Icon(
                   Icons.close,
                   color: toolBarStyle.foregroundColor,
                   size: 20,
                 ),
-                // tooltip: 'Close popover',
                 onPressed: () { onTap(); },
               )
               // PopoverCloseButton(
