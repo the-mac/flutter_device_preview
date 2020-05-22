@@ -331,12 +331,13 @@ class _PopOverHeader extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             children: <Widget>[
               Container(
-                key: Key('${title}CloseButton'),
+                key: Key('${title}CloseContainer'),
                 width: 40, 
                 height: 20,
                 child: FlatButton(
                   child: Icon(
                     Icons.close,
+                    semanticLabel: '${title}CloseButton',
                     color: toolBarStyle.foregroundColor,
                     size: 20,
                   ),
