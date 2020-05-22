@@ -397,10 +397,10 @@ class PopoverCloseButton extends GestureDetector {
     this.textDirection,
   }) : super(
     // key: key,
+    key: key,
     onTap: onTap,
     child: Icon(
       Icons.close,
-      key: key,
       size: size,
       color: color,
       semanticLabel: semanticLabel,
