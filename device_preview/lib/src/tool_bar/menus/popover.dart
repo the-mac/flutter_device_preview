@@ -330,27 +330,27 @@ class _PopOverHeader extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: <Widget>[
-              Container(
-                width: 40, 
-                height: 20,
-                child: FlatButton(
-                  key: Key('${title}CloseButton'),
-                  child: Icon(
-                    Icons.close,
-                    semanticLabel: '${title}CloseButton',
-                    color: toolBarStyle.foregroundColor,
-                    size: 20,
-                  ),
-                  onPressed: () { onTap(); },
-                )
-              )
-              // PopoverCloseButton(
-              //   onTap,
-              //   size: 20.0,
-              //   key: Key('PopoverHeader${title}CloseButton'),
-              //   semanticLabel: 'PopoverCloseButton',
-              //   color: toolBarStyle.foregroundColor
+              // Container(
+              //   width: 40, 
+              //   height: 20,
+              //   child: FlatButton(
+              //     key: Key('${title}CloseButton'),
+              //     child: Icon(
+              //       Icons.close,                    
+              //       semanticLabel: '${title}CloseButton',
+              //       color: toolBarStyle.foregroundColor,
+              //       size: 20,
+              //     ),
+              //     onPressed: () { onTap(); },
+              //   )
               // )
+              PopoverCloseButton(
+                onTap,
+                size: 20.0,
+                key: Key('PopoverHeader${title}CloseButton'),
+                semanticLabel: 'PopoverCloseButton',
+                color: toolBarStyle.foregroundColor
+              )
             ]
           )
         ],
@@ -392,31 +392,31 @@ class _PopOverHeader extends StatelessWidget {
   }
 }
 
-// class PopoverCloseButton extends GestureDetector {
-//   final Color color;
-//   final double size;
-//   final String semanticLabel;
-//   final TextDirection textDirection;
+class PopoverCloseButton extends GestureDetector {
+  final Color color;
+  final double size;
+  final String semanticLabel;
+  final TextDirection textDirection;
 
-//   PopoverCloseButton(onTap, {
-//     Key key,
-//     this.color,
-//     this.size,
-//     this.semanticLabel,
-//     this.textDirection,
-//   }) : super(
-//     // key: key,
-//     key: key,
-//     onTap: onTap,
-//     child: Icon(
-//       Icons.close,
-//       size: size,
-//       color: color,
-//       semanticLabel: semanticLabel,
-//       textDirection: textDirection
-//     )
-//   );
-// }
+  PopoverCloseButton(onTap, {
+    Key key,
+    this.color,
+    this.size,
+    this.semanticLabel,
+    this.textDirection,
+  }) : super(
+    // key: key,
+    key: key,
+    onTap: onTap,
+    child: Icon(
+      Icons.close,
+      size: size,
+      color: color,
+      semanticLabel: semanticLabel,
+      textDirection: textDirection
+    )
+  );
+}
 
 
               // SizedBox(
