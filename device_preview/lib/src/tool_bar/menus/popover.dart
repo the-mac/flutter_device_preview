@@ -332,12 +332,11 @@ class _PopOverHeader extends StatelessWidget {
             ]
           ),
           SizedBox(
-              width: 45,
+              width: 95,
           ),
           PopoverCloseButton(
             onTap,
             size: 20.0,
-            key: Key('PopoverHeaderCloseButton'),
             color: toolBarStyle.foregroundColor
           )
         ]
