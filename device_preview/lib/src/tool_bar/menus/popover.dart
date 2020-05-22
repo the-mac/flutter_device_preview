@@ -322,19 +322,24 @@ class _PopOverHeader extends StatelessWidget {
                   color: toolBarStyle.foregroundColor,
                 ),
               ),
+              Icon(
+                Icons.close,
+                size: 12.0,
+                color: toolBarStyle.foregroundColor,
+              )
               // SizedBox(
               //     width: 1.0,
               // ),
-              IconButton(
-                key: Key('PopOverHeaderCloseButton'),
-                icon: Icon(
-                  Icons.close,
-                  size: 12.0,
-                  color: toolBarStyle.foregroundColor,
-                ),
-                tooltip: 'Close popover',
-                onPressed: () { close(context); },
-              )
+              // IconButton(
+              //   key: Key('PopOverHeaderCloseButton'),
+              //   icon: Icon(
+              //     Icons.close,
+              //     size: 12.0,
+              //     color: toolBarStyle.foregroundColor,
+              //   ),
+              //   tooltip: 'Close popover',
+              //   onPressed: () { close(context); },
+              // )
             ],
           ),
           // SizedBox(
