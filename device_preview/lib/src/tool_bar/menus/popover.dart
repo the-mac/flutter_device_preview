@@ -303,10 +303,10 @@ class _PopOverHeader extends StatelessWidget {
         ),
       ),
       padding: EdgeInsets.all(10.0),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.end,
-        children: <Widget>[
-          Row(
+      // child: Row(
+      //   crossAxisAlignment: CrossAxisAlignment.end,
+      //   children: <Widget>[
+          child: Row(
             children: <Widget>[
               Icon(
                 icon,
@@ -322,23 +322,37 @@ class _PopOverHeader extends StatelessWidget {
                   color: toolBarStyle.foregroundColor,
                 ),
               ),
+              SizedBox(
+                  width: 16.0,
+              ),
+
+              IconButton(
+                key: Key('PopOverHeaderCloseButton'),
+                icon: Icon(
+                  Icons.close,
+                  size: 12.0,
+                  color: toolBarStyle.foregroundColor,
+                ),
+                tooltip: 'Close popover',
+                onPressed: () { close(context); },
+              )
             ],
           ),
           // SizedBox(
           //     width: 1.0,
           // ),
-          IconButton(
-            key: Key('PopOverHeaderCloseButton'),
-            icon: Icon(
-              Icons.close,
-              size: 12.0,
-              color: toolBarStyle.foregroundColor,
-            ),
-            tooltip: 'Close popover',
-            onPressed: () { close(context); },
-         )
-        ]
-      ),
+        //   IconButton(
+        //     key: Key('PopOverHeaderCloseButton'),
+        //     icon: Icon(
+        //       Icons.close,
+        //       size: 12.0,
+        //       color: toolBarStyle.foregroundColor,
+        //     ),
+        //     tooltip: 'Close popover',
+        //     onPressed: () { close(context); },
+        //  )
+      //   ]
+      // ),
     );
   }
 }
