@@ -292,12 +292,6 @@ class _PopOverHeader extends StatelessWidget {
     @required this.onTap
   });
 
-  // static void close(BuildContext context) {
-  //   print('Called _PopOverHeader.close()');
-  //   final state = context.findAncestorStateOfType<_PopoverState>();
-  //   state.close();
-  // }
-
   @override
   Widget build(BuildContext context) {
     final toolBarStyle = DevicePreviewTheme.of(context).toolBar;
@@ -336,10 +330,10 @@ class _PopOverHeader extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             children: <Widget>[
               Container(
-                key: Key('PopoverHeader${title}CloseButton'),
                 width: 40, 
                 height: 20,
                 child: FlatButton(
+                  key: Key('PopoverHeader${title}CloseButton'),
                   child: Icon(
                     Icons.close,
                     color: toolBarStyle.foregroundColor,
