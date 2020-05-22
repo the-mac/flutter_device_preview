@@ -392,31 +392,31 @@ class _PopOverHeader extends StatelessWidget {
   }
 }
 
-class PopoverCloseButton extends GestureDetector {
-  final Color color;
-  final double size;
-  final String semanticLabel;
-  final TextDirection textDirection;
+// class PopoverCloseButton extends GestureDetector {
+//   final Color color;
+//   final double size;
+//   final String semanticLabel;
+//   final TextDirection textDirection;
 
-  PopoverCloseButton(onTap, {
-    Key key,
-    this.color,
-    this.size,
-    this.semanticLabel,
-    this.textDirection,
-  }) : super(
-    // key: key,
-    key: key,
-    onTap: onTap,
-    child: Icon(
-      Icons.close,
-      size: size,
-      color: color,
-      semanticLabel: semanticLabel,
-      textDirection: textDirection
-    )
-  );
-}
+//   PopoverCloseButton(onTap, {
+//     Key key,
+//     this.color,
+//     this.size,
+//     this.semanticLabel,
+//     this.textDirection,
+//   }) : super(
+//     // key: key,
+//     key: key,
+//     onTap: onTap,
+//     child: Icon(
+//       Icons.close,
+//       size: size,
+//       color: color,
+//       semanticLabel: semanticLabel,
+//       textDirection: textDirection
+//     )
+//   );
+// }
 
 
               // SizedBox(
