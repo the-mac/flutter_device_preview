@@ -1,5 +1,6 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:device_preview/src/utilities/media_query_observer.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'dart:math' as math;
 
@@ -285,6 +286,11 @@ class _PopOverHeader extends StatelessWidget {
     @required this.icon,
   });
 
+  static void close(BuildContext context) {
+    final state = context.findAncestorStateOfType<_PopoverState>();
+    state.close();
+  }
+
   @override
   Widget build(BuildContext context) {
     final toolBarStyle = DevicePreviewTheme.of(context).toolBar;
@@ -298,22 +304,40 @@ class _PopOverHeader extends StatelessWidget {
       ),
       padding: EdgeInsets.all(10.0),
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.end,
         children: <Widget>[
-          Icon(
-            icon,
-            size: 12.0,
-            color: toolBarStyle.foregroundColor,
+          Row(
+            children: <Widget>[
+              Icon(
+                icon,
+                size: 12.0,
+                color: toolBarStyle.foregroundColor,
+              ),
+              SizedBox(
+                width: 6.0,
+              ),
+              Text(
+                title,
+                style: TextStyle(
+                  color: toolBarStyle.foregroundColor,
+                ),
+              ),
+            ],
           ),
           SizedBox(
-            width: 6.0,
+              width: 45.0,
           ),
-          Text(
-            title,
-            style: TextStyle(
+          IconButton(
+            key: Key('PopOverHeaderCloseButton'),
+            icon: Icon(
+              Icons.close,
+              size: 12.0,
               color: toolBarStyle.foregroundColor,
             ),
-          ),
-        ],
+            tooltip: 'Close popover',
+            onPressed: () { close(context); },
+         )
+        ]
       ),
     );
   }
