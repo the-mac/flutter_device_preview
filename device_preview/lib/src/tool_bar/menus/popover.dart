@@ -329,7 +329,7 @@ class _PopOverHeader extends StatelessWidget {
                   color: toolBarStyle.foregroundColor,
                 ),
               )
-            ],
+            ]
           ),
           SizedBox(
               width: 1.0,
@@ -339,13 +339,40 @@ class _PopOverHeader extends StatelessWidget {
             size: 12.0,
             key: Key('PopoverHeaderCloseButton'),
             color: toolBarStyle.foregroundColor
-          ),
+          )
         ]
-      ),
+      )
     );
   }
 }
-,
+
+class PopoverCloseButton extends Icon {
+  final GestureTapCallback onTap;
+  PopoverCloseButton(this.onTap, {
+    Key key,
+    color,
+    size,
+    semanticLabel,
+    textDirection = TextDirection.rtl,
+  }) : super(
+    Icons.close,
+    key: key,
+    size: size,
+    color: color,
+    semanticLabel: semanticLabel,
+    textDirection: textDirection
+  );
+  
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: super.build(context)
+    );
+  }
+}
+
+
               // SizedBox(
               //   width: 46,
               // ),
@@ -388,29 +415,3 @@ class _PopOverHeader extends StatelessWidget {
               //   tooltip: 'Close popover',
               //   onPressed: () { close(context); },
               // )
-
-class PopoverCloseButton extends Icon {
-  final GestureTapCallback onTap;
-  PopoverCloseButton(this.onTap, {
-    Key key,
-    color,
-    size,
-    semanticLabel,
-    textDirection = TextDirection.rtl,
-  }) : super(
-    Icons.close,
-    key: key,
-    size: size,
-    color: color,
-    semanticLabel: semanticLabel,
-    textDirection: textDirection
-  );
-  
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: super.build(context)
-    );
-  }
-}
