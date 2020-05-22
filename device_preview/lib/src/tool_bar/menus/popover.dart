@@ -329,7 +329,11 @@ class _PopOverHeader extends StatelessWidget {
                   color: toolBarStyle.foregroundColor,
                 ),
               ),
-              PopoverCloseButton(onTap),
+              PopoverCloseButton(
+                onTap, 
+                key: Key('PopOverHeaderCloseButton'),
+                color: toolBarStyle.foregroundColor
+              ),
               // FlatButton(
               //   key: Key('PopOverHeaderCloseButton'),
               //   padding: EdgeInsets.all(0.0),
@@ -392,7 +396,20 @@ class _PopOverHeader extends StatelessWidget {
 
 class PopoverCloseButton extends Icon {
   final GestureTapCallback onTap;
-  PopoverCloseButton(this.onTap) : super(Icons.close, size: 12);
+  PopoverCloseButton(this.onTap, {
+    Key key,
+    color,
+    size = 12,
+    semanticLabel,
+    textDirection = TextDirection.rtl,
+  }) : super(
+    Icons.close,
+    key: key,
+    size: size,
+    color: color,
+    semanticLabel: semanticLabel,
+    textDirection: textDirection
+  );
   
   @override
   Widget build(BuildContext context) {
