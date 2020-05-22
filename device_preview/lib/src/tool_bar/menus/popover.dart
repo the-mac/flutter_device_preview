@@ -68,6 +68,7 @@ class _PopoverState extends State<Popover> {
               child: widget.builder(context, close),
               size: widget.size ?? Size(280, 420),
               startPosition: _key.absolutePosition,
+              onTap: () => close()
             ),
           ),
         ),
@@ -105,6 +106,7 @@ class _PopOverContainer extends StatefulWidget {
   final Widget child;
   final String title;
   final IconData icon;
+  final GestureTapCallback onTap;
 
   _PopOverContainer({
     @required this.title,
@@ -112,6 +114,7 @@ class _PopOverContainer extends StatefulWidget {
     @required this.child,
     @required this.startPosition,
     @required this.size,
+    @required this.onTap
   });
 
   @override
@@ -248,6 +251,7 @@ class __PopOverContainerState extends State<_PopOverContainer>
                 child: _PopOverHeader(
                   title: widget.title,
                   icon: widget.icon,
+                  onTap: widget.onTap,
                 ),
               ),
               Expanded(
@@ -280,17 +284,19 @@ class _PopOverBarrier extends StatelessWidget {
 class _PopOverHeader extends StatelessWidget {
   final String title;
   final IconData icon;
+  final GestureTapCallback onTap;
 
   _PopOverHeader({
     @required this.title,
     @required this.icon,
+    @required this.onTap
   });
 
-  static void close(BuildContext context) {
-    print('Called _PopOverHeader.close()');
-    final state = context.findAncestorStateOfType<_PopoverState>();
-    state.close();
-  }
+  // static void close(BuildContext context) {
+  //   print('Called _PopOverHeader.close()');
+  //   final state = context.findAncestorStateOfType<_PopoverState>();
+  //   state.close();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -323,17 +329,18 @@ class _PopOverHeader extends StatelessWidget {
                   color: toolBarStyle.foregroundColor,
                 ),
               ),
-              FlatButton(
-                key: Key('PopOverHeaderCloseButton'),
-                padding: EdgeInsets.all(0.0),
-                clipBehavior: Clip.hardEdge,
-                child: Icon(
-                  Icons.close,
-                  size: 12.0,
-                  color: toolBarStyle.foregroundColor,
-                ),
-                onPressed: () { close(context); },
-              )
+              PopoverCloseButton(onTap),
+              // FlatButton(
+              //   key: Key('PopOverHeaderCloseButton'),
+              //   padding: EdgeInsets.all(0.0),
+              //   clipBehavior: Clip.hardEdge,
+              //   child: Icon(
+              //     Icons.close,
+              //     size: 12.0,
+              //     color: toolBarStyle.foregroundColor,
+              //   ),
+              //   onPressed: onTap,
+              // )
               // FlatButton.icon(
               //   key: Key('PopOverHeaderCloseButton'),
               //   // width: 12.0,
@@ -379,6 +386,19 @@ class _PopOverHeader extends StatelessWidget {
         //  )
       //   ]
       // ),
+    );
+  }
+}
+
+class PopoverCloseButton extends Icon {
+  final GestureTapCallback onTap;
+  PopoverCloseButton(this.onTap) : super(Icons.close, size: 12);
+  
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: super.build(context)
     );
   }
 }
