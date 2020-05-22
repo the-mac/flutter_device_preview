@@ -295,6 +295,7 @@ class _PopOverHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final toolBarStyle = DevicePreviewTheme.of(context).toolBar;
+    print('$this.title: $title');
     return Container(
       decoration: BoxDecoration(
         color: toolBarStyle.backgroundColor,
@@ -333,7 +334,7 @@ class _PopOverHeader extends StatelessWidget {
                 width: 40, 
                 height: 20,
                 child: FlatButton(
-                  key: Key('PopoverHeader${title}CloseButton'),
+                  key: Key('${title}CloseButton'),
                   child: Icon(
                     Icons.close,
                     color: toolBarStyle.foregroundColor,
