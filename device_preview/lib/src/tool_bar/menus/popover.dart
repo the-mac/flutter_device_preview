@@ -324,6 +324,7 @@ class _PopOverHeader extends StatelessWidget {
               ),
               FlatButton.icon(
                 key: Key('PopOverHeaderCloseButton'),
+                padding: EdgeInsets.all(0.0),
                 icon: Icon(
                   Icons.close,
                   size: 12.0,
