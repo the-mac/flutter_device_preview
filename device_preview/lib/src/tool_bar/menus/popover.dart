@@ -367,7 +367,7 @@ class PopoverCloseButton extends Icon {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
-      child: super.build(context)
+      child: this
     );
   }
 }
