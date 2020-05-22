@@ -346,30 +346,29 @@ class _PopOverHeader extends StatelessWidget {
   }
 }
 
-class PopoverCloseButton extends Icon {
-  final GestureTapCallback onTap;
-  PopoverCloseButton(this.onTap, {
+class PopoverCloseButton extends GestureDetector {
+  final Color color;
+  final double size;
+  final String semanticLabel;
+  final TextDirection textDirection;
+
+  PopoverCloseButton(onTap, {
     Key key,
-    color,
-    size,
-    semanticLabel,
-    textDirection,
+    this.color,
+    this.size,
+    this.semanticLabel,
+    this.textDirection,
   }) : super(
-    Icons.close,
     key: key,
-    size: size,
-    color: color,
-    semanticLabel: semanticLabel,
-    textDirection: textDirection
+    onTap: onTap,
+    child: Icon(
+      Icons.close,
+      size: size,
+      color: color,
+      semanticLabel: semanticLabel,
+      textDirection: textDirection
+    )
   );
-  
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: super
-    );
-  }
 }
 
 
