@@ -310,10 +310,10 @@ class _PopOverHeader extends StatelessWidget {
         ),
       ),
       padding: EdgeInsets.all(10.0),
-      // child: Row(
-      //   crossAxisAlignment: CrossAxisAlignment.end,
-      //   children: <Widget>[
-          child: Row(
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: <Widget>[
+          Row(// child: 
             children: <Widget>[
               Icon(
                 icon,
@@ -328,16 +328,27 @@ class _PopOverHeader extends StatelessWidget {
                 style: TextStyle(
                   color: toolBarStyle.foregroundColor,
                 ),
-              ),
-              SizedBox(
-                width: 46,
-              ),
-              PopoverCloseButton(
-                onTap, 
-                size: 12.0,
-                key: Key('PopoverHeaderCloseButton'),
-                color: toolBarStyle.foregroundColor
-              ),
+              )
+            ],
+          ),
+          SizedBox(
+              width: 1.0,
+          ),
+          PopoverCloseButton(
+            onTap, 
+            size: 12.0,
+            key: Key('PopoverHeaderCloseButton'),
+            color: toolBarStyle.foregroundColor
+          ),
+        ]
+      ),
+    );
+  }
+}
+,
+              // SizedBox(
+              //   width: 46,
+              // ),
               // FlatButton(
               //   key: Key('PopOverHeaderCloseButton'),
               //   padding: EdgeInsets.all(0.0),
@@ -377,26 +388,6 @@ class _PopOverHeader extends StatelessWidget {
               //   tooltip: 'Close popover',
               //   onPressed: () { close(context); },
               // )
-            ],
-          ),
-          // SizedBox(
-          //     width: 1.0,
-          // ),
-        //   IconButton(
-        //     key: Key('PopOverHeaderCloseButton'),
-        //     icon: Icon(
-        //       Icons.close,
-        //       size: 12.0,
-        //       color: toolBarStyle.foregroundColor,
-        //     ),
-        //     tooltip: 'Close popover',
-        //     onPressed: () { close(context); },
-        //  )
-      //   ]
-      // ),
-    );
-  }
-}
 
 class PopoverCloseButton extends Icon {
   final GestureTapCallback onTap;
