@@ -325,7 +325,7 @@ class _PopOverHeader extends StatelessWidget {
             ],
           ),
           SizedBox(
-              width: 45.0,
+              width: 15.0,
           ),
           IconButton(
             key: Key('PopOverHeaderCloseButton'),
