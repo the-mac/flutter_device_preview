@@ -336,7 +336,7 @@ class _PopOverHeader extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             children: <Widget>[
               Container(
-                width: 20, 
+                width: 40, 
                 height: 20,
                 child: FlatButton(
                   key: Key('PopoverHeader${title}CloseButton'),
