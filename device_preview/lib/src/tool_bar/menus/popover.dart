@@ -57,7 +57,7 @@ class _PopoverState extends State<Popover> {
         opaque: false,
         builder: (context) => _PopOverBarrier(
           () => close(),
-          key: Key('PopoverBarrierClose')
+          key: Key('PopoverBarrier${widget.title}Close')
         ),
       );
 
