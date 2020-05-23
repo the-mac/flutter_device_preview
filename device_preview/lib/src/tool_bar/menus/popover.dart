@@ -35,6 +35,11 @@ class Popover extends StatefulWidget {
     state.close();
   }
 
+  void closePopup(BuildContext context) {
+    final state = context.findAncestorStateOfType<_PopoverState>();
+    state.close();
+  }
+
   @override
   _PopoverState createState() => _PopoverState();
 }

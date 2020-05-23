@@ -5,8 +5,9 @@ import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 // import '../../../device_preview.dart';
+// import '../../utilities/spacing.dart';
 import 'package:device_preview/device_preview.dart';
-import '../../utilities/spacing.dart';
+import 'package:device_preview/src/utilities/spacing.dart';
 import 'popover.dart';
 
 class DevicesPopOver extends StatefulWidget {
@@ -73,7 +74,8 @@ class _DevicesPopOverState extends State<DevicesPopOver> {
                   .map((e) => DeviceTile(e, () {
                     previewState.device = e;
                     if(previewState.closeOnSelection) {
-                      Popover.close(context);
+                      var findAncestorWidgetOfExactType = context.findAncestorWidgetOfExactType<Popover>();
+                      findAncestorWidgetOfExactType.closePopup(context);
                     }
                   }))
                   .toList(),

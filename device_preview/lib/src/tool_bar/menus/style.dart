@@ -26,7 +26,7 @@ class StylePopOver extends StatelessWidget {
               onTap: () => preview.closeOnSelection = true,
               child: Container(
                 decoration: BoxDecoration(
-                    border: Border.all(color: Colors.white),
+                    border: Border.all(color: Colors.green),
                     color: Colors.green,
                 )
               ),
@@ -36,7 +36,7 @@ class StylePopOver extends StatelessWidget {
               onTap: () => preview.closeOnSelection = false,
               child: Container(
                 decoration: BoxDecoration(
-                    border: Border.all(color: Colors.grey),
+                    border: Border.all(color: Colors.red),
                     color: Colors.red,
                 )
               ),
