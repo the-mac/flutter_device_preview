@@ -1,13 +1,11 @@
-import 'package:device_preview/device_preview.dart';
+import 'package:device_preview/src/device_preview.dart';
 import 'package:device_preview/src/utilities/media_query_observer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'dart:math' as math;
 
-import 'package:device_preview/src/device_preview.dart';
-import 'package:device_preview/src/utilities/position.dart';
-// import '../../device_preview.dart';
-// import '../../utilities/position.dart';
+import '../../device_preview.dart';
+import '../../utilities/position.dart';
 
 typedef PopoverContentBuilder = Widget Function(
     BuildContext context, GestureTapCallback onClose);

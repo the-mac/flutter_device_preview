@@ -4,10 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import 'package:device_preview/src/device_preview.dart';
-import 'package:device_preview/src/utilities/spacing.dart';
-// import '../../../device_preview.dart';
-// import '../../utilities/spacing.dart';
+import '../../../device_preview.dart';
+import '../../utilities/spacing.dart';
 import 'popover.dart';
 
 class DevicesPopOver extends StatefulWidget {
