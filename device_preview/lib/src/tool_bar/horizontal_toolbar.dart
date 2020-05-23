@@ -35,6 +35,7 @@ class _DevicePreviewToolBarState extends State<DevicePreviewHorizontalToolBar> {
       title: 'Devices',
       icon: Icons.devices,
       builder: (context, _) => DevicesPopOver(),
+      onClose: () => Popover.close(context),
       child: Builder(
         builder: (context) => ToolBarButton(
           key: Key('HorizontalToolbarDevicesButton'),
@@ -49,6 +50,7 @@ class _DevicePreviewToolBarState extends State<DevicePreviewHorizontalToolBar> {
     final widthButton = Popover(
       title: 'Screen width',
       icon: Icons.border_horizontal,
+      onClose: () => Popover.close(context),
       builder: (context, _) => SizePopOver(
         value: preview.freeformSize.width,
         onChanged: (v) =>
@@ -74,6 +76,7 @@ class _DevicePreviewToolBarState extends State<DevicePreviewHorizontalToolBar> {
     final heightButton = Popover(
       title: 'Screen height',
       icon: Icons.border_horizontal,
+      onClose: () => Popover.close(context),
       builder: (context, _) => SizePopOver(
         value: preview.freeformSize.height,
         onChanged: (v) => preview.freeformSize = Size(
@@ -140,6 +143,7 @@ class _DevicePreviewToolBarState extends State<DevicePreviewHorizontalToolBar> {
               key: Key('HorizontalToolbarLocalesButton'),
               title: 'Locales',
               icon: Icons.language,
+              onClose: () => Popover.close(context),
               builder: (context, _) => LocalesPopOver(),
               child: Builder(
                 builder: (context) => ToolBarButton(
@@ -194,6 +198,7 @@ class _DevicePreviewToolBarState extends State<DevicePreviewHorizontalToolBar> {
               title: 'Screenshot',
               size: Size(300, 300),
               icon: Icons.photo_camera,
+              onClose: () => Popover.close(context),
               builder: (context, _) =>
                   ScreenshotPopOver(screenShotmessage ?? ''),
               child: Builder(
@@ -221,6 +226,7 @@ class _DevicePreviewToolBarState extends State<DevicePreviewHorizontalToolBar> {
               title: 'Accessibility',
               size: Size(280, 300),
               icon: Icons.accessibility_new,
+              onClose: () => Popover.close(context),
               builder: (context, _) => AccessibilityPopOver(),
               child: Builder(
                 builder: (context) => ToolBarButton(
@@ -235,6 +241,7 @@ class _DevicePreviewToolBarState extends State<DevicePreviewHorizontalToolBar> {
               title: 'Settings',
               size: Size(280, 320),
               icon: Icons.tune,
+              onClose: () => Popover.close(context),
               builder: (context, close) => StylePopOver(close),
               child: Builder(
                 builder: (context) => ToolBarButton(

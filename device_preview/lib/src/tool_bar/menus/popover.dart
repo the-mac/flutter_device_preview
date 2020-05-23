@@ -15,6 +15,8 @@ class Popover extends StatefulWidget {
   final IconData icon;
   final Size size;
   final PopoverContentBuilder builder;
+  final GestureTapCallback onClose;
+  // _PopoverState _popoverState;
 
   const Popover({
     Key key,
@@ -23,6 +25,7 @@ class Popover extends StatefulWidget {
     @required this.icon,
     @required this.child,
     @required this.builder,
+    @required this.onClose,
   }) : super(key: key);
 
   static void open(BuildContext context) {
@@ -35,13 +38,12 @@ class Popover extends StatefulWidget {
     state.close();
   }
 
-  void closePopup(BuildContext context) {
-    final state = context.findAncestorStateOfType<_PopoverState>();
-    state.close();
-  }
+  // void closePopup(BuildContext context) {
+  //   _popoverState.close();
+  // }
 
   @override
-  _PopoverState createState() => _PopoverState();
+  _PopoverState createState() => _PopoverState(); // _popoverState = 
 }
 
 class _PopoverState extends State<Popover> {
@@ -72,7 +74,7 @@ class _PopoverState extends State<Popover> {
               child: widget.builder(context, close),
               size: widget.size ?? Size(280, 420),
               startPosition: _key.absolutePosition,
-              onTap: () => close()
+              onClose: () => close()
             ),
           ),
         ),
@@ -110,7 +112,7 @@ class _PopOverContainer extends StatefulWidget {
   final Widget child;
   final String title;
   final IconData icon;
-  final GestureTapCallback onTap;
+  final GestureTapCallback onClose;
 
   _PopOverContainer({
     @required this.title,
@@ -118,7 +120,7 @@ class _PopOverContainer extends StatefulWidget {
     @required this.child,
     @required this.startPosition,
     @required this.size,
-    @required this.onTap
+    @required this.onClose
   });
 
   @override
@@ -255,7 +257,7 @@ class __PopOverContainerState extends State<_PopOverContainer>
                 child: _PopOverHeader(
                   title: widget.title,
                   icon: widget.icon,
-                  onTap: widget.onTap,
+                  onTap: widget.onClose,
                 ),
               ),
               Expanded(
