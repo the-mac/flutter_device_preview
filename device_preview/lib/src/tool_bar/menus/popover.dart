@@ -16,7 +16,6 @@ class Popover extends StatefulWidget {
   final Size size;
   final PopoverContentBuilder builder;
   final GestureTapCallback onClose;
-  // _PopoverState _popoverState;
 
   const Popover({
     Key key,
@@ -43,7 +42,7 @@ class Popover extends StatefulWidget {
   // }
 
   @override
-  _PopoverState createState() => _PopoverState(); // _popoverState = 
+  _PopoverState createState() => _PopoverState();
 }
 
 class _PopoverState extends State<Popover> {
@@ -74,7 +73,7 @@ class _PopoverState extends State<Popover> {
               child: widget.builder(context, close),
               size: widget.size ?? Size(280, 420),
               startPosition: _key.absolutePosition,
-              onClose: () => previewState.closeOnSelection ? close() : null
+              onClose: () => close()
             ),
           ),
         ),
