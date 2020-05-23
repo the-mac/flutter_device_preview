@@ -57,6 +57,7 @@ class _PopoverState extends State<Popover> {
         opaque: false,
         builder: (context) => _PopOverBarrier(
           () => close(),
+          key: Key('PopoverBarrierClose')
         ),
       );
 
@@ -273,7 +274,7 @@ class __PopOverContainerState extends State<_PopOverContainer>
 class _PopOverBarrier extends StatelessWidget {
   final GestureTapCallback onTap;
 
-  _PopOverBarrier(this.onTap);
+  _PopOverBarrier(this.onTap, { key }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
