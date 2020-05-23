@@ -36,10 +36,10 @@ class _DevicesPopOverState extends State<DevicesPopOver> {
 
   @override
   Widget build(BuildContext context) {
-    final preview = DevicePreview.of(context);
+    final previewState = DevicePreview.of(context);
     final all =
-        preview.availableDevices.map((e) => e.platform).toSet().toList();
-    final selected = this.selected ?? [preview.device?.platform ?? all.first];
+        previewState.availableDevices.map((e) => e.platform).toSet().toList();
+    final selected = this.selected ?? [previewState.device?.platform ?? all.first];
 
     return GestureDetector(
       onPanDown: (_) {
@@ -63,7 +63,7 @@ class _DevicesPopOverState extends State<DevicesPopOver> {
             child: ListView(
               key: Key('DevicesListView'),
               padding: EdgeInsets.all(10.0),              
-              children: preview.availableDevices
+              children: previewState.availableDevices
                   .where((x) =>
                       selected.contains(x.platform) &&
                       x.name
@@ -71,8 +71,8 @@ class _DevicesPopOverState extends State<DevicesPopOver> {
                           .toLowerCase()
                           .contains(_searchedText))
                   .map((e) => DeviceTile(e, () {
-                    preview.device = e;
-                    if(preview.closeOnSelection) {
+                    previewState.device = e;
+                    if(previewState.closeOnSelection) {
                       Popover.close(context);
                     }
                   }))
