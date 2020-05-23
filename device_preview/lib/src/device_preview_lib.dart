@@ -622,7 +622,7 @@ class DevicePreviewState extends State<DevicePreview> {
   DevicePreviewStyle _style;
 
   /// The current state for closing devices popover.
-  bool _closeOnSelection = false;
+  bool _closeOnSelection = true;
 
   /// The default locale from the device.
   String get _defaultLocale => basicLocaleListResolution(
