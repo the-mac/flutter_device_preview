@@ -288,10 +288,6 @@ class DevicePreviewState extends State<DevicePreview> {
   /// Update the [style].
   set closeOnSelection(bool value) {
     _closeOnSelection = value;
-    // DevicePreviewStyleStorage.save(_closeOnSelection, !widget.usePreferences);
-    if (widget.enabled) {
-      setState(() {});
-    }
   }
 
   /// Update the [style].
