@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'dart:math' as math;
 
-import '../../device_preview.dart';
+// import '../../device_preview.dart';
+import 'package:device_preview/src/device_preview_lib.dart';
 import '../../utilities/position.dart';
 
 typedef PopoverContentBuilder = Widget Function(
