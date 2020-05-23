@@ -1,8 +1,7 @@
 import 'dart:convert';
 
 import 'package:shared_preferences/shared_preferences.dart';
-
-import '../device_preview.dart';
+import 'package:device_preview/device_preview.dart';
 
 abstract class DevicePreviewStorage {
   /// Save the current preferences (until [ignore] is `true`).
