@@ -46,7 +46,7 @@ class Popover extends StatefulWidget {
 }
 
 class _PopoverState extends State<Popover> {
-  final _key = GlobalKey();
+  final _key = GlobalKey(debugLabel: '${_PopoverState}.${DateTime.now()}');
   List<OverlayEntry> _overlayEntries = [];
   bool _isOpen = false;
 
