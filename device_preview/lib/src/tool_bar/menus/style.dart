@@ -22,10 +22,23 @@ class StylePopOver extends StatelessWidget {
           title: 'Close Devices after selection',
           options: <Widget>[
             _SelectBox(
-              isSelected: style.background == lightBackground.background,
-              onTap: () => preview.closeOnSelection = !preview.closeOnSelection,
+              isSelected: preview.closeOnSelection,
+              onTap: () => preview.closeOnSelection = true,
               child: Container(
-                decoration: lightBackground.background,
+                decoration: BoxDecoration(
+                    border: Border.all(color: preview.closeOnSelection ? Colors.grey : Colors.blue),
+                    color: Colors.green,
+                )
+              ),
+            ),
+            _SelectBox(
+              isSelected: !preview.closeOnSelection,
+              onTap: () => preview.closeOnSelection = false,
+              child: Container(
+                decoration: BoxDecoration(
+                    border: Border.all(color: preview.closeOnSelection ? Colors.blue : Colors.grey),
+                    color: Colors.red,
+                )
               ),
             )
           ],
