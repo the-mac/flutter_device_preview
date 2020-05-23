@@ -26,8 +26,8 @@ class StylePopOver extends StatelessWidget {
               onTap: () => preview.closeOnSelection = true,
               child: Container(
                 decoration: BoxDecoration(
-                    border: Border.all(color: Colors.green),
-                    color: Colors.green,
+                    border: Border.all(color: Colors.green[800]),
+                    color: Colors.green[800],
                 )
               ),
             ),
