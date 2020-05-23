@@ -280,6 +280,20 @@ class DevicePreviewState extends State<DevicePreview> {
     }
   }
 
+  /// Access the [closeOnSelection].
+  bool get closeOnSelection {
+    return _closeOnSelection;
+  }
+
+  /// Update the [style].
+  set closeOnSelection(bool value) {
+    _closeOnSelection = value;
+    // DevicePreviewStyleStorage.save(_closeOnSelection, !widget.usePreferences);
+    if (widget.enabled) {
+      setState(() {});
+    }
+  }
+
   /// Update the [style].
   set style(DevicePreviewStyle value) {
     _style = value;
@@ -607,6 +621,9 @@ class DevicePreviewState extends State<DevicePreview> {
 
   /// The current style.
   DevicePreviewStyle _style;
+
+  /// The current state for closing devices popover.
+  bool _closeOnSelection;
 
   /// The default locale from the device.
   String get _defaultLocale => basicLocaleListResolution(

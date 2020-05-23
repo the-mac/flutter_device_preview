@@ -19,6 +19,18 @@ class StylePopOver extends StatelessWidget {
       padding: EdgeInsets.all(10),
       children: [
         _StyleTile(
+          title: 'Close Devices after selection',
+          options: <Widget>[
+            _SelectBox(
+              isSelected: style.background == lightBackground.background,
+              onTap: () => preview.closeOnSelection = !preview.closeOnSelection,
+              child: Container(
+                decoration: lightBackground.background,
+              ),
+            )
+          ],
+        ),
+        _StyleTile(
           title: 'Background theme',
           options: <Widget>[
             _SelectBox(

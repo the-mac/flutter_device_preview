@@ -6,6 +6,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../../device_preview.dart';
 import '../../utilities/spacing.dart';
+import 'popover.dart';
 
 class DevicesPopOver extends StatefulWidget {
   @override
@@ -60,7 +61,7 @@ class _DevicesPopOverState extends State<DevicesPopOver> {
           Expanded(
             child: ListView(
               key: Key('DevicesListView'),
-              padding: EdgeInsets.all(10.0),
+              padding: EdgeInsets.all(10.0),              
               children: preview.availableDevices
                   .where((x) =>
                       selected.contains(x.platform) &&
@@ -68,7 +69,12 @@ class _DevicesPopOverState extends State<DevicesPopOver> {
                           .replaceAll(' ', '')
                           .toLowerCase()
                           .contains(_searchedText))
-                  .map((e) => DeviceTile(e, () => preview.device = e))
+                  .map((e) => DeviceTile(e, () {
+                    preview.device = e;
+                    if(preview.closeOnSelection) {
+                      Popover.close(context);
+                    }
+                  }))
                   .toList(),
             ),
           ),
