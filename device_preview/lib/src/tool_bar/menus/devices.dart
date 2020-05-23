@@ -73,10 +73,10 @@ class _DevicesPopOverState extends State<DevicesPopOver> {
                           .contains(_searchedText))
                   .map((e) => DeviceTile(e, () {
                     previewState.device = e;
-                    if(previewState.closeOnSelection) {
-                      var findAncestorWidgetOfExactType = context.findAncestorWidgetOfExactType<Popover>();
-                      findAncestorWidgetOfExactType.closePopup(context);
-                    }
+                    // if(previewState.closeOnSelection) {
+                    //   var findAncestorWidgetOfExactType = context.findAncestorWidgetOfExactType<Popover>();
+                    //   findAncestorWidgetOfExactType.close(context);
+                    // }
                   }))
                   .toList(),
             ),

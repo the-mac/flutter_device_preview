@@ -52,7 +52,7 @@ class _PopoverState extends State<Popover> {
   bool _isOpen = false;
 
   void open() {
-    final device = DevicePreview.of(context);
+    final previewState = DevicePreview.of(context);
     if (!_isOpen) {
       final barrier = OverlayEntry(
         opaque: false,
@@ -65,16 +65,16 @@ class _PopoverState extends State<Popover> {
         opaque: false,
         builder: (context) => MediaQueryObserver(
           child: DevicePreviewProvider(
-            availableDevices: device.availableDevices,
-            data: device.data,
-            mediaQuery: device.mediaQuery,
+            availableDevices: previewState.availableDevices,
+            data: previewState.data,
+            mediaQuery: previewState.mediaQuery,
             child: _PopOverContainer(
               title: widget.title,
               icon: widget.icon,
               child: widget.builder(context, close),
               size: widget.size ?? Size(280, 420),
               startPosition: _key.absolutePosition,
-              onClose: () => close()
+              onClose: () => previewState.closeOnSelection ? close() : null
             ),
           ),
         ),
