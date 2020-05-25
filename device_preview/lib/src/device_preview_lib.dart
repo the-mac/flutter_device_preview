@@ -602,7 +602,7 @@ class DevicePreviewState extends State<DevicePreview> {
   }
 
   /// The repaint key used for rendering screenshots.
-  final _repaintKey = GlobalKey();//debugLabel: '${DevicePreview}.${math.Random().nextInt(100)}');
+  final _repaintKey = GlobalKey(debugLabel: '${DevicePreview}.${math.Random().nextInt(100)}');
 
   /// A stream that sends a new value each time the user takes
   /// a new screenshot.
