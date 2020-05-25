@@ -530,7 +530,7 @@ class DevicePreviewState extends State<DevicePreview> {
                         : screen;
 
                     preview = RepaintBoundary(
-                      key: _repaintKey,
+                      key: Key('${DevicePreview}.${preview.key}${math.Random().nextInt(100)}'),//_repaintKey,
                       child: preview,
                     );
 
